@@ -1,0 +1,34 @@
+/*
+ * Print rules for the print view.
+ *
+ * On screen this is an ordinary page; these apply only when printing.
+ * Pagination is ours, not the browser's: `paginate` in music_lib chooses which
+ * systems share a page, and each page block breaks after itself.
+ */
+@media print {
+  /* The chrome is for choosing what to print, not part of the printout. */
+  .print-chrome {
+    display: none !important;
+  }
+
+  .print-pages {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  /* The rule the whole feature exists to guarantee: a break after each page we
+     chose, and never inside a system (PrintSystem carries that itself). */
+  .print-page {
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .print-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  /* No @page here: it is emitted by PrintView from PAGE_MARGIN_MM, so the
+     margin the printer uses and the margin the packer assumed cannot drift. */
+}
