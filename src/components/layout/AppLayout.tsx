@@ -42,6 +42,7 @@
  * library's 44px minimum height does not belong.
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useNavigator } from '../../navigation/navigator';
 import { KEYBOARD_MAX_HEIGHT, keyboardPanelHeight } from '@sudobility/music_drawing';
 import { useTranslation } from 'react-i18next';
 import type { KeyboardEvent, ReactNode } from 'react';
@@ -240,6 +241,9 @@ export function AppLayout({
   renderDeveloperSettings,
 }: AppLayoutProps) {
   const { t } = useTranslation();
+  // Shared routes go through the library-owned navigator; app-only routes (the
+  // print page) stay on the injected `onNavigate` callback.
+  const nav = useNavigator();
   const projectName = store((s) => s.projectName);
   const saveState = store((s) => s.saveState);
   const canUndo = store((s) => s.canUndo);
@@ -728,7 +732,7 @@ export function AppLayout({
           <button
             type="button"
             aria-label={t('editor.backToDashboard')}
-            onClick={() => onNavigate?.('/projects')}
+            onClick={() => nav.go('projects')}
             className={ICON_BUTTON_CLASS}
           >
             <ChevronLeftIcon className={ICON_GLYPH_CLASS} />
