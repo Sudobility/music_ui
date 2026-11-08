@@ -120,9 +120,7 @@ const NO_TRACK_IDS: ReadonlySet<string> = new Set();
  * boundary's app-side half, the "caller supplies `soundingTrackIds`" its spec
  * calls for.
  */
-export function useSoundingTrackIds(
-  bus: PlaybackBus | undefined = liveBus(),
-): ReadonlySet<string> {
+export function useSoundingTrackIds(bus: PlaybackBus | undefined = liveBus()): ReadonlySet<string> {
   const subscribe = useCallback(
     (onChange: () => void) => (bus ? bus.onSounding(onChange) : NO_OP),
     [bus],

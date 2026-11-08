@@ -95,6 +95,9 @@ export function LyricEntryBar({
     if (draft !== existing) return;
     inputRef.current?.focus();
     inputRef.current?.setSelectionRange(0, existing.length);
+    // Runs on a move (index) or an edit (draft) only; `notes`/`store` are read
+    // for the current word but must not re-focus the field as they change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [draft, index]);
 
   if (!note) return null;

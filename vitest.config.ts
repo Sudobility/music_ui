@@ -7,7 +7,7 @@ export default defineConfig({
   resolve: {
     dedupe: ['react', 'react-dom', 'zustand'],
     alias: {
-      '@': resolve(__dirname, './src'),
+      '@': resolve(import.meta.dirname, './src'),
     },
   },
   test: {

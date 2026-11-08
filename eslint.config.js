@@ -43,6 +43,12 @@ const browserGlobals = {
   PointerEvent: 'readonly',
   Event: 'readonly',
   CustomEvent: 'readonly',
+  EventTarget: 'readonly',
+  ResizeObserver: 'readonly',
+  MediaDevices: 'readonly',
+  MediaDeviceInfo: 'readonly',
+  MediaQueryList: 'readonly',
+  queueMicrotask: 'readonly',
   setTimeout: 'readonly',
   clearTimeout: 'readonly',
   setInterval: 'readonly',
@@ -77,6 +83,26 @@ export default [
     rules: {
       ...typescript.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+      // Mirror music_app's react-hooks v7 relaxations: these rules fight the
+      // performance patterns the shared editor UI uses (refs read during
+      // render, signals, manual memoisation, setState in measurement effects).
+      // Only rules-of-hooks stays an error and exhaustive-deps a warning.
+      'react-hooks/refs': 'off',
+      'react-hooks/use-memo': 'off',
+      'react-hooks/incompatible-library': 'off',
+      'react-hooks/globals': 'off',
+      'react-hooks/error-boundaries': 'off',
+      'react-hooks/set-state-in-render': 'off',
+      'react-hooks/unsupported-syntax': 'off',
+      'react-hooks/config': 'off',
+      'react-hooks/gating': 'off',
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/purity': 'off',
+      'react-hooks/static-components': 'off',
+      'react-hooks/immutability': 'off',
+      'react-hooks/preserve-manual-memoization': 'off',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
       'prettier/prettier': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',

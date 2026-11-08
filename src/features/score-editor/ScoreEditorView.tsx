@@ -747,6 +747,9 @@ export function ScoreEditorView({
     if (dx !== 0) box.scrollLeft += dx;
     if (dy !== 0) box.scrollTop += dy;
     autoscrollRafRef.current = requestAnimationFrame(stepAutoscroll);
+    // `autoscrollDelta` is a stable injected geometry helper, captured once;
+    // adding it would restart the requestAnimationFrame loop on every render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [layoutMode]);
 
   /**

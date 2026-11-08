@@ -9,7 +9,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger } from '@sudobility/components';
-import { PendingButton } from '@sudobility/music_ui';
+import { PendingButton } from '../../components/controls/PendingButton';
 import { PAGE_MARGIN_MM, selectVisibleTrackIds } from '../../app-library';
 import { findTrack } from '../../app-library';
 import type { PaperOrientation, PaperSize } from '../../app-library';

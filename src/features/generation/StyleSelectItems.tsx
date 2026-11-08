@@ -11,7 +11,12 @@
 import { SelectGroup, SelectItem, SelectLabel } from '@sudobility/components';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { NO_MARK, groupedStyleOptions, styleFamilyLabelKey, styleLabelKey } from '../../app-library';
+import {
+  NO_MARK,
+  groupedStyleOptions,
+  styleFamilyLabelKey,
+  styleLabelKey,
+} from '../../app-library';
 
 export function StyleSelectItems() {
   const { t, i18n } = useTranslation();

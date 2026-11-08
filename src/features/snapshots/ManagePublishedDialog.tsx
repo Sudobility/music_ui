@@ -14,8 +14,8 @@ import { useEffect, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormModal, Input } from '@sudobility/components';
-import { AS_TYPED_INPUT_CLASS } from '@sudobility/music_ui';
-import { usePendingAction } from '@sudobility/music_ui';
+import { AS_TYPED_INPUT_CLASS } from '../../components/controls/input-classes';
+import { usePendingAction } from '../../hooks/usePendingAction';
 import { flagReasonLabelKey, type SnapshotSummary } from '@sudobility/music_types';
 
 export type ManagePublishedDialogProps = {

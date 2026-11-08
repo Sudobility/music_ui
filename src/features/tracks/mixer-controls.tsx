@@ -49,7 +49,7 @@ import { clampPan, clampVolume, panReadout, volumeReadout } from '@sudobility/mu
   library control and its near-invisible `bg-muted` groove. One definition,
   so the two cannot look different again.
 */
-import { LevelSlider, SliderShell, TRACK_BASE_CLASS } from '@sudobility/music_ui';
+import { LevelSlider, SliderShell, TRACK_BASE_CLASS } from '../../components/controls/level-slider';
 
 /**
  * Pan: square-cornered, and a different ground from volume's.

@@ -57,12 +57,7 @@ import {
   PickupField,
   RepeatFields,
 } from './measure-fields';
-import {
-  CommitSlider,
-  MixedCheckbox,
-  MixedNumberField,
-  MixedSelect,
-} from './controls';
+import { CommitSlider, MixedCheckbox, MixedNumberField, MixedSelect } from './controls';
 import {
   ACCIDENTAL_PICKER,
   FIELD_HEIGHT_CLASS,

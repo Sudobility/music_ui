@@ -16,11 +16,7 @@ import type { NoteEvent, Score } from '@sudobility/music_types';
 import { barBeatCommitTick, formatBeatForField } from '@sudobility/music_types';
 import { setFingering } from '../../app-library';
 import type { EditorStoreApi } from '../../app-library';
-import {
-  FIELD_HEIGHT_CLASS,
-  FIELD_LABEL_CLASS,
-  TEXT_INPUT_CLASS,
-} from './shared';
+import { FIELD_HEIGHT_CLASS, FIELD_LABEL_CLASS, TEXT_INPUT_CLASS } from './shared';
 
 /** A library `Slider` wrapped with an accessible name (via a visually-hidden
  * label, since `Slider` accepts no `aria-label`) and a commit-on-release

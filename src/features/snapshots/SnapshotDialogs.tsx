@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormModal, Input } from '@sudobility/components';
-import { AS_TYPED_INPUT_CLASS } from '@sudobility/music_ui';
+import { AS_TYPED_INPUT_CLASS } from '../../components/controls/input-classes';
 import { LIVE_NODE_ID } from '../../app-library';
 import type { TreeNode } from '../../app-library';
 import { publishNamesProblem, suggestedPublicName } from '@sudobility/music_client';
