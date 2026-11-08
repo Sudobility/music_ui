@@ -135,7 +135,7 @@ export {
   exportFilename,
   serializeProjectFile,
 } from '@sudobility/music_codecs';
-export { planExport } from './services/export-plan';
+export { planExport } from '@sudobility/music_lib';
 export {
   NO_MARK,
   GENERATE_SCORE_COMPLEXITY_OPTIONS,
