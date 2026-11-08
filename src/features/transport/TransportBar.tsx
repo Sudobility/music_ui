@@ -40,7 +40,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getMusicPlayerIfInitialized } from '@sudobility/music_player/core';
-import type { PlaybackBus } from '@sudobility/music_player/core';
+import type { PlaybackBus } from '@sudobility/music_types';
 import { usePlaybackReadiness } from '@sudobility/music_player/react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import { LevelSlider } from '../../components/controls';

@@ -18,7 +18,7 @@
  * empty-score affordance of its own.
  */
 import { SpatialView } from '@sudobility/music_spatial';
-import type { PlaybackBus } from '@sudobility/music_player/core';
+import type { PlaybackBus } from '@sudobility/music_types';
 import type { EditorStoreApi } from '../../app-library';
 import { controlLocked, selectEditLocked } from '../../app-library';
 import { useSoundingTrackIds } from '../../hooks';

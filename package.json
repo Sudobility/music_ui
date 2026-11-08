@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Shared functional UI for ScoreSmith's web app (editor shell, toolbar, transport, inspector, score view, keyboard, spatial, print) — routing and content pages stay in the app",
   "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

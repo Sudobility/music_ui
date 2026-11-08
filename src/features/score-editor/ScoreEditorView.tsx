@@ -101,7 +101,7 @@ import { usePendingAction } from '../../hooks';
 import { ChoiceDialog } from '../../components/dialogs';
 import { EditorToolbar } from './EditorToolbar';
 import type { EditorToolbarProps } from './EditorToolbar';
-import type { PlaybackBus } from '@sudobility/music_player/core';
+import type { PlaybackBus } from '@sudobility/music_types';
 // The voice-record control (`MediaRecorder` + transcription) is injected via
 // the `renderVoiceRecord` prop and forwarded to `EditorToolbar`.
 import type { LayoutMode, TrackInfoMode } from '@sudobility/music_types';

@@ -24,7 +24,8 @@
  * throwing, so a component renders either way.
  */
 import { useCallback, useRef, useSyncExternalStore } from 'react';
-import { getMusicPlayerIfInitialized, type PlaybackBus } from '@sudobility/music_player/core';
+import { getMusicPlayerIfInitialized } from '@sudobility/music_player/core';
+import type { PlaybackBus } from '@sudobility/music_types';
 import { playingPitchesForTrack, samePitchSet } from '../app-library';
 
 /** The registered player's bus, or `undefined` before one is registered. */
