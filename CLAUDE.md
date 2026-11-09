@@ -57,6 +57,9 @@ piano keyboard need literal colours (VexFlow never reads CSS). `music_app`'s
 
 ## Build & packaging gotchas (each cost a cycle)
 
+- **Install needs GitHub Packages auth** — `.npmrc` maps `@sudobility` to
+  `npm.pkg.github.com`, so `bun install` fails to fetch the `@sudobility/*` peers
+  without a `read:packages` token on the machine (e.g. in `~/.npmrc`).
 - **Types are emitted by `tsc` (`emitDeclarationOnly`), not a vite dts plugin** —
   `vite-plugin-dts` produced an empty `export {}` for this re-export barrel.
   `scripts/fix-esm-imports.mjs` then rewrites extensionless specifiers to `.js`.
