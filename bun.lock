@@ -8,11 +8,11 @@
         "@eslint/js": "~10.0.1",
         "@heroicons/react": "~2.2.0",
         "@react-three/fiber": "~9.8.2",
-        "@sudobility/components": "^5.3.66",
-        "@sudobility/design": "^1.1.70",
+        "@sudobility/components": "^5.3.67",
+        "@sudobility/design": "^1.1.71",
         "@sudobility/music_client": "^0.4.108",
         "@sudobility/music_codecs": "^0.2.67",
-        "@sudobility/music_drawing": "^0.0.77",
+        "@sudobility/music_drawing": "^0.0.78",
         "@sudobility/music_editing": "^0.0.66",
         "@sudobility/music_io": "^0.9.85",
         "@sudobility/music_lib": "^1.9.89",
@@ -61,11 +61,11 @@
       },
       "peerDependencies": {
         "@heroicons/react": ">=2",
-        "@sudobility/components": "^5.3.66",
-        "@sudobility/design": "^1.1.70",
+        "@sudobility/components": "^5.3.67",
+        "@sudobility/design": "^1.1.71",
         "@sudobility/music_client": "^0.4.108",
         "@sudobility/music_codecs": "^0.2.67",
-        "@sudobility/music_drawing": "^0.0.77",
+        "@sudobility/music_drawing": "^0.0.78",
         "@sudobility/music_editing": "^0.0.66",
         "@sudobility/music_io": "^0.9.85",
         "@sudobility/music_lib": "^1.9.89",
@@ -598,9 +598,9 @@
 
     "@standard-schema/utils": ["@standard-schema/utils@0.3.0", "", {}, "sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g=="],
 
-    "@sudobility/components": ["@sudobility/components@5.3.66", "https://npm.pkg.github.com/download/@sudobility/components/5.3.66/e6330401b784dbc17e8ac3ff6293ba689dd343ab", { "dependencies": { "jsqr": "^1.4.0" }, "optionalDependencies": { "@rollup/rollup-linux-x64-gnu": "4.52.5", "@rollup/rollup-linux-x64-musl": "4.52.5" }, "peerDependencies": { "@heroicons/react": ">=2.0.0", "@radix-ui/react-alert-dialog": ">=1.0.0", "@radix-ui/react-dialog": ">=1.0.0", "@radix-ui/react-label": ">=2.0.0", "@radix-ui/react-select": ">=2.0.0", "@radix-ui/react-slot": ">=1.0.0", "@radix-ui/react-switch": ">=1.0.0", "@radix-ui/react-tabs": ">=1.0.0", "@revenuecat/purchases-js": "^1.0.0", "@sudobility/design": "^1.1.70", "@sudobility/di": "^1.5.86", "@sudobility/subscription_lib": "^0.0.66", "@sudobility/types": "^1.9.79", "class-variance-authority": ">=0.7.0", "clsx": ">=2.0.0", "firebase": "^12.0.0", "i18next": ">=23.0.0", "react": ">=18.0.0", "react-dom": ">=18.0.0", "react-i18next": ">=14.0.0", "react-router-dom": ">=6.0.0", "recharts": "^3.0.0", "tailwind-merge": ">=2.0.0", "web-vitals": ">=3.0.0" } }, "sha512-41rUGBUogH2AE7PKVNnOFnh7JoZ7mwjRVXAfK/PqZWa6frSEAxCPWuqAi2T/drCKINnHx69ZdQE8PBRKwhfHQg=="],
+    "@sudobility/components": ["@sudobility/components@5.3.67", "https://npm.pkg.github.com/download/@sudobility/components/5.3.67/6928e4214236ae351e3726fdfd2b6243e7705d60", { "dependencies": { "jsqr": "^1.4.0" }, "optionalDependencies": { "@rollup/rollup-linux-x64-gnu": "4.52.5", "@rollup/rollup-linux-x64-musl": "4.52.5" }, "peerDependencies": { "@heroicons/react": ">=2.0.0", "@radix-ui/react-alert-dialog": ">=1.0.0", "@radix-ui/react-dialog": ">=1.0.0", "@radix-ui/react-label": ">=2.0.0", "@radix-ui/react-select": ">=2.0.0", "@radix-ui/react-slot": ">=1.0.0", "@radix-ui/react-switch": ">=1.0.0", "@radix-ui/react-tabs": ">=1.0.0", "@revenuecat/purchases-js": "^1.0.0", "@sudobility/design": "^1.1.71", "@sudobility/di": "^1.5.86", "@sudobility/subscription_lib": "^0.0.66", "@sudobility/types": "^1.9.79", "class-variance-authority": ">=0.7.0", "clsx": ">=2.0.0", "firebase": "^12.0.0", "i18next": ">=23.0.0", "react": ">=18.0.0", "react-dom": ">=18.0.0", "react-i18next": ">=14.0.0", "react-router-dom": ">=6.0.0", "recharts": "^3.0.0", "tailwind-merge": ">=2.0.0", "web-vitals": ">=3.0.0" } }, "sha512-NsnOURTkEYBeOlRuJ0ddS15kiGO4Ljhho29afPEAIs4C9+5GQvJPYYrlWHz+2wzzrQpQcox5+YwaMbpTAJS47Q=="],
 
-    "@sudobility/design": ["@sudobility/design@1.1.70", "https://npm.pkg.github.com/download/@sudobility/design/1.1.70/5875e2de11b161a059697b23e237e18ce33448b6", { "peerDependencies": { "clsx": ">=2.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-YnLcfMnK7d6Q5TFjPPLMYtqZ0ZJO7x9i4lQiVtA9gcQysmFa4UvAV7uCu7oUpLJ6F1/nU92J9eTm/8O7TMG2Xg=="],
+    "@sudobility/design": ["@sudobility/design@1.1.71", "https://npm.pkg.github.com/download/@sudobility/design/1.1.71/e3a174cea0da29ebb2f1c590750c647cf3d7e11c", { "peerDependencies": { "clsx": ">=2.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-qqQn+OLksBqqMePYz2Zv2eXl2GCt6fk+WBUvhzhKx2ZMZdrf2JlIvIdWq9qOvdZlhizxuwMMl4dI8orMI43Ikw=="],
 
     "@sudobility/di": ["@sudobility/di@1.5.85", "https://npm.pkg.github.com/download/@sudobility/di/1.5.85/5914303c5376ee0a158b08bdff2955fe3392b4c0", { "peerDependencies": { "@notifee/react-native": ">=7.0.0", "@react-native-async-storage/async-storage": ">=1.19.0", "@react-native-community/netinfo": ">=9.0.0", "@react-native-firebase/analytics": ">=18.0.0", "@react-native-firebase/app": ">=18.0.0", "@react-native-firebase/messaging": ">=18.0.0", "@sudobility/types": "^1.9.78", "firebase": ">=11.0.0", "react": ">=18.0.0", "react-native": ">=0.70.0" } }, "sha512-SsRL5t8G2/Kck8bnZUz1H1XIKFDBeM3dK1w0UoaBZqHnxTHrSbVectxQYgF6zskzlPeA6GlKHYd8tB7YB0MFxA=="],
 
@@ -608,7 +608,7 @@
 
     "@sudobility/music_codecs": ["@sudobility/music_codecs@0.2.67", "https://npm.pkg.github.com/download/@sudobility/music_codecs/0.2.67/911bd30109d93b9ef1ba1344ba70c57eb297c446", { "peerDependencies": { "@sudobility/music_types": "^0.13.66" } }, "sha512-QqphO2Zpy2LfWY51KM4DKrvwL5w2xUQFWu8bup+xJhUUZYiV5HS6vh2dB8EwjT8MAlCcEY8uNVMv9SE9R0mExQ=="],
 
-    "@sudobility/music_drawing": ["@sudobility/music_drawing@0.0.77", "https://npm.pkg.github.com/download/@sudobility/music_drawing/0.0.77/fe271581dd5985eac21bb2aa2e99a7507c8d377b", { "peerDependencies": { "@sudobility/music_types": "^0.13.66", "vexflow": "^4.2.5" } }, "sha512-huuo6FMOw8UcbCfj0E0wJ8ZvbmEAed0CfyMhIxg3y9woGyXPnZ3AVcXHCzbV133wYaILWDnUK/Rbi3xw1/zWPw=="],
+    "@sudobility/music_drawing": ["@sudobility/music_drawing@0.0.78", "https://npm.pkg.github.com/download/@sudobility/music_drawing/0.0.78/8f4f501f128cbf7cbab0b73bce1a3c47ffba8dd4", { "peerDependencies": { "@sudobility/music_types": "^0.13.66", "@sudobility/printing_core": "^0.1.0", "vexflow": "^4.2.5" } }, "sha512-vAq1qrhMsdg7F0m1AgUCgIBOXoDHbjmigi06yDwuuScgOqR6VKPwWE/odzpRjBYxvoJW9nSbpkmmhVR4jV7o2A=="],
 
     "@sudobility/music_editing": ["@sudobility/music_editing@0.0.66", "https://npm.pkg.github.com/download/@sudobility/music_editing/0.0.66/d9d8a4361094d6440029a3a744b829bbafe612bd", { "peerDependencies": { "@sudobility/music_types": "^0.13.66", "immer": "^11.1.18", "react": ">=18", "zustand": ">=5" } }, "sha512-QmSr720IgNhPyVuDsX6/Ty1zs7SmUqsuAB0NEc4XsTpTXHKjyujEa7R7718AJ4W2hkyUOcZYeGrvrkqmsgxD/A=="],
 
