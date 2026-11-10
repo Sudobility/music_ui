@@ -44,13 +44,11 @@ export function PrintSystem({ score, slice, trackIds, onDrawn }: PrintSystemProp
     onDrawn?.(slice.systemIndex);
   }, [score, slice, trackIds, onDrawn]);
 
+  // The never-break-across-a-page rule is carried by `<PrintSlice>` (from
+  // `@sudobility/printing`), which the print view wraps each system in — one
+  // shared place for the rule rather than an inline style here.
   return (
-    <div
-      data-testid={`print-system-${slice.systemIndex}`}
-      // Inline rather than a class: this is the rule the whole feature exists
-      // to guarantee, and it belongs on the element that carries it.
-      style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}
-    >
+    <div data-testid={`print-system-${slice.systemIndex}`}>
       <canvas ref={canvasRef} style={{ width: '100%', display: 'block' }} />
     </div>
   );

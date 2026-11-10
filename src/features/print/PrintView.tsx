@@ -5,17 +5,26 @@
  * A route of its own rather than an overlay, because printing prints the whole
  * document — mounting only this is simpler than hiding the editor's chrome
  * with print rules.
+ *
+ * The cross-platform pieces are `@sudobility/printing`: `usePrintOptions` holds
+ * the scope/paper/orientation choices (and reflects the remembered paper),
+ * `pageCss` emits the `@page` rule from one geometry, `useDrawGate` spins Print
+ * until every page has drawn, and `PrintSlice` carries the never-break-here
+ * rule. What reaches paper — the part or the marked full score, the pagination
+ * — is still music_drawing's `printPlan`, shared with the native app.
  */
-import { useCallback, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger } from '@sudobility/components';
 import { PendingButton } from '../../components/controls/PendingButton';
-import { PAGE_MARGIN_MM, selectVisibleTrackIds } from '../../app-library';
+import { selectVisibleTrackIds } from '../../app-library';
 import { findTrack } from '../../app-library';
 import type { PaperOrientation, PaperSize } from '../../app-library';
 import type { EditorStoreApi } from '../../app-library';
 import { WHOLE_SCORE, printPlan } from '@sudobility/music_drawing';
 import { ORIENTATION_OPTIONS, PAPER_OPTIONS, defaultPaperSizeFor } from '@sudobility/music_types';
+import { usePrintOptions } from '@sudobility/printing_core/react';
+import { PrintSlice, pageCss, useDrawGate } from '@sudobility/printing';
 import { PrintSystem } from './PrintSystem';
 import './print.css';
 
@@ -28,21 +37,26 @@ export function PrintView({ store, onBack }: PrintViewProps) {
   const { t } = useTranslation();
   const score = store((s) => s.score);
   const visibleTrackIds = store(selectVisibleTrackIds);
-  const [scope, setScope] = useState<string>(WHOLE_SCORE);
+
   /*
     The paper is remembered (the `paperSize` device pref), because a reader's
-    printer does not change between printouts; until they choose one it
-    follows the browser's region — Letter where the region prints on Letter,
-    A4 elsewhere. Scope and orientation are about this printout, so they are
-    held here.
+    printer does not change between printouts; until they choose one it follows
+    the browser's region — Letter where the region prints on Letter, A4
+    elsewhere. Scope and orientation are about this printout, so `usePrintOptions`
+    holds them locally and reflects the remembered paper back through
+    `onPaperChange`.
   */
   const chosenPaper = store((s) => s.paperSize);
   const [regionPaper] = useState(() =>
     defaultPaperSizeFor(typeof navigator === 'undefined' ? [] : navigator.languages),
   );
-  const paper = chosenPaper ?? regionPaper;
-  const setPaper = (value: PaperSize) => store.getState().setPaperSize(value);
-  const [orientation, setOrientation] = useState<PaperOrientation>('portrait');
+  const { scope, setScope, paper, setPaper, orientation, setOrientation, geometry } =
+    usePrintOptions({
+      scope: WHOLE_SCORE,
+      rememberedPaper: chosenPaper ?? null,
+      defaultPaper: regionPaper,
+      onPaperChange: (value) => store.getState().setPaperSize(value),
+    });
 
   /**
    * Everything that decides what reaches paper — which score (a part written
@@ -52,8 +66,7 @@ export function PrintView({ store, onBack }: PrintViewProps) {
    * document. This view only picks the options and draws the slices.
    *
    * The plan draws through `displayScore`, so a note under an `8va` prints
-   * where it is written. This view drew the stored score before, and printed a
-   * bracketed passage an octave high under its own bracket.
+   * where it is written.
    */
   const plan = useMemo(
     () => (score ? printPlan(score, { scope, visibleTrackIds, paper, orientation }) : null),
@@ -65,30 +78,18 @@ export function PrintView({ store, onBack }: PrintViewProps) {
   /*
     Print waits for the pages. Every system is drawn into its own canvas after
     the view commits, and a long score is seconds of VexFlow — so pressing
-    Print before the last canvas has been drawn sent blank systems to paper,
-    with nothing on screen to say the pages were not ready. The button spins,
-    and refuses a press, until every system of the current plan has reported
-    itself drawn; a new plan (another scope, paper or orientation) starts the
-    count again.
+    Print before the last canvas has been drawn sent blank systems to paper.
+    `useDrawGate` spins the button and refuses a press until every system of the
+    current plan has reported itself drawn; a new plan restarts the count.
   */
-  const [drawn, setDrawn] = useState<{ plan: unknown; systems: ReadonlySet<number> }>({
-    plan: null,
-    systems: new Set(),
-  });
-  const onDrawn = useCallback(
-    (systemIndex: number) =>
-      setDrawn((previous) => {
-        const systems = previous.plan === plan ? previous.systems : new Set<number>();
-        if (previous.plan === plan && systems.has(systemIndex)) return previous;
-        return { plan, systems: new Set(systems).add(systemIndex) };
-      }),
-    [plan],
-  );
   const systemCount = plan
     ? plan.pages.reduce((count, page) => count + page.systemIndices.length, 0)
     : 0;
-  const drawnCount = drawn.plan === plan ? drawn.systems.size : 0;
-  const preparing = systemCount > 0 && drawnCount < systemCount;
+  const { ready, markDrawn, reset } = useDrawGate(systemCount);
+  useEffect(() => {
+    reset();
+  }, [plan, reset]);
+  const preparing = systemCount > 0 && !ready;
 
   const scopeLabel =
     scope === WHOLE_SCORE
@@ -101,10 +102,10 @@ export function PrintView({ store, onBack }: PrintViewProps) {
     <div className="min-h-screen bg-white text-black">
       {/*
         The printer's page and the packer's page must be the same page. Both
-        come from PAGE_MARGIN_MM and the picker below; a second margin written
-        into a stylesheet is how they silently drift apart.
+        come from one `PageGeometry` via `pageCss`; a second margin written into
+        a stylesheet is how they silently drift apart.
       */}
-      <style>{`@page { size: ${paperOption?.css} ${orientation}; margin: ${PAGE_MARGIN_MM}mm; }`}</style>
+      <style>{pageCss(geometry)}</style>
       {/*
         The bar is the app's, so it takes the theme; only the paper under it
         is white. On the white wrapper a ghost button's ink is the dark
@@ -170,13 +171,14 @@ export function PrintView({ store, onBack }: PrintViewProps) {
           {plan.pages.map((page, pageIndex) => (
             <div key={pageIndex} data-testid={`print-page-${pageIndex}`} className="print-page">
               {page.systemIndices.map((systemIndex) => (
-                <PrintSystem
-                  key={systemIndex}
-                  score={plan.score}
-                  slice={plan.slices[systemIndex]}
-                  trackIds={trackIds}
-                  onDrawn={onDrawn}
-                />
+                <PrintSlice key={systemIndex}>
+                  <PrintSystem
+                    score={plan.score}
+                    slice={plan.slices[systemIndex]}
+                    trackIds={trackIds}
+                    onDrawn={markDrawn}
+                  />
+                </PrintSlice>
               ))}
             </div>
           ))}
