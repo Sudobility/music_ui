@@ -13,7 +13,7 @@
  * rule. What reaches paper — the part or the marked full score, the pagination
  * — is still music_drawing's `printPlan`, shared with the native app.
  */
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger } from '@sudobility/components';
 import { PendingButton } from '../../components/controls/PendingButton';
@@ -86,9 +86,15 @@ export function PrintView({ store, onBack }: PrintViewProps) {
     ? plan.pages.reduce((count, page) => count + page.systemIndices.length, 0)
     : 0;
   const { ready, markDrawn, reset } = useDrawGate(systemCount);
-  useEffect(() => {
+  // Reset the count the instant the plan changes, during render and so before
+  // the new systems' draw effects run. A reset in an effect runs *after* the
+  // child `PrintSystem` effects — children commit before parents — so it would
+  // wipe the very draws it means to precede, and the button would spin forever.
+  const planRef = useRef(plan);
+  if (planRef.current !== plan) {
+    planRef.current = plan;
     reset();
-  }, [plan, reset]);
+  }
   const preparing = systemCount > 0 && !ready;
 
   const scopeLabel =

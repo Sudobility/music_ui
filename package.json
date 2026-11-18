@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/music_ui",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Shared functional UI for ScoreSmith's web app (editor shell, toolbar, transport, inspector, score view, keyboard, spatial, print) — routing and content pages stay in the app",
   "type": "module",
   "sideEffects": [
