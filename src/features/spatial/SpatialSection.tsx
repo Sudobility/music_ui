@@ -37,6 +37,11 @@ export function SpatialSection({ store, bus }: { store: EditorStoreApi; bus?: Pl
       onMoveListener={(patch) => store.getState().setUnpluggedListener(patch)}
       onMoveTrack={(trackId, point) => store.getState().setUnpluggedTrackPosition(trackId, point)}
       onResetArrangement={() => store.getState().resetUnpluggedArrangement()}
+      // Auto mode (Wander) walks the listener continuously; routed through the
+      // transient preview rather than `setUnpluggedListener` so the mix is
+      // heard live without writing a random walk into the score or undo. The
+      // playback binding reads `unpluggedListenerPreview` and re-mixes.
+      onPreviewListener={(listener) => store.getState().setUnpluggedListenerPreview(listener)}
       // The active track follows whatever the listener is facing: the
       // inspector, the keyboard and the notation highlight then all show
       // the part being looked at. Turning away from everything keeps the
