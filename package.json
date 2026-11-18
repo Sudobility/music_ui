@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/music_ui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Shared functional UI for ScoreSmith's web app (editor shell, toolbar, transport, inspector, score view, keyboard, spatial, print) — routing and content pages stay in the app",
   "type": "module",
   "sideEffects": [
@@ -50,7 +50,7 @@
   "license": "BUSL-1.1",
   "peerDependencies": {
     "@heroicons/react": ">=2",
-    "@sudobility/components": "^5.3.75",
+    "@sudobility/components": "^5.3.76",
     "@sudobility/design": "^1.1.72",
     "@sudobility/music_client": "^0.4.113",
     "@sudobility/music_codecs": "^0.2.72",
@@ -59,7 +59,7 @@
     "@sudobility/music_io": "^0.9.90",
     "@sudobility/music_lib": "^1.9.94",
     "@sudobility/music_player": "^0.1.91",
-    "@sudobility/music_spatial": "^0.0.43",
+    "@sudobility/music_spatial": "^0.0.44",
     "@sudobility/music_types": "^0.13.72",
     "@sudobility/printing": "^0.1.2",
     "@sudobility/printing_core": "^0.1.1",
@@ -79,7 +79,7 @@
     "@eslint/js": "~10.0.1",
     "@heroicons/react": "~2.2.0",
     "@react-three/fiber": "~9.8.2",
-    "@sudobility/components": "^5.3.75",
+    "@sudobility/components": "^5.3.76",
     "@sudobility/design": "^1.1.72",
     "@sudobility/music_client": "^0.4.113",
     "@sudobility/music_codecs": "^0.2.72",
@@ -88,7 +88,7 @@
     "@sudobility/music_io": "^0.9.90",
     "@sudobility/music_lib": "^1.9.94",
     "@sudobility/music_player": "^0.1.91",
-    "@sudobility/music_spatial": "^0.0.43",
+    "@sudobility/music_spatial": "^0.0.44",
     "@sudobility/music_spatial_core": "^0.0.38",
     "@sudobility/music_types": "^0.13.72",
     "@sudobility/printing": "^0.1.2",

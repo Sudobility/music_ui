@@ -8,7 +8,7 @@
         "@eslint/js": "~10.0.1",
         "@heroicons/react": "~2.2.0",
         "@react-three/fiber": "~9.8.2",
-        "@sudobility/components": "^5.3.75",
+        "@sudobility/components": "^5.3.76",
         "@sudobility/design": "^1.1.72",
         "@sudobility/music_client": "^0.4.113",
         "@sudobility/music_codecs": "^0.2.72",
@@ -17,7 +17,7 @@
         "@sudobility/music_io": "^0.9.90",
         "@sudobility/music_lib": "^1.9.94",
         "@sudobility/music_player": "^0.1.91",
-        "@sudobility/music_spatial": "^0.0.43",
+        "@sudobility/music_spatial": "^0.0.44",
         "@sudobility/music_spatial_core": "^0.0.38",
         "@sudobility/music_types": "^0.13.72",
         "@sudobility/printing": "^0.1.2",
@@ -61,7 +61,7 @@
       },
       "peerDependencies": {
         "@heroicons/react": ">=2",
-        "@sudobility/components": "^5.3.75",
+        "@sudobility/components": "^5.3.76",
         "@sudobility/design": "^1.1.72",
         "@sudobility/music_client": "^0.4.113",
         "@sudobility/music_codecs": "^0.2.72",
@@ -70,7 +70,7 @@
         "@sudobility/music_io": "^0.9.90",
         "@sudobility/music_lib": "^1.9.94",
         "@sudobility/music_player": "^0.1.91",
-        "@sudobility/music_spatial": "^0.0.43",
+        "@sudobility/music_spatial": "^0.0.44",
         "@sudobility/music_types": "^0.13.72",
         "@sudobility/printing": "^0.1.2",
         "@sudobility/printing_core": "^0.1.1",
@@ -599,7 +599,7 @@
 
     "@standard-schema/utils": ["@standard-schema/utils@0.3.0", "", {}, "sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g=="],
 
-    "@sudobility/components": ["@sudobility/components@5.3.75", "https://npm.pkg.github.com/download/@sudobility/components/5.3.75/1e96c79e3ce5df961e44b585ca4e3f1d913373c2", { "dependencies": { "jsqr": "^1.4.0" }, "optionalDependencies": { "@rollup/rollup-linux-x64-gnu": "4.52.5", "@rollup/rollup-linux-x64-musl": "4.52.5" }, "peerDependencies": { "@heroicons/react": ">=2.0.0", "@radix-ui/react-alert-dialog": ">=1.0.0", "@radix-ui/react-dialog": ">=1.0.0", "@radix-ui/react-label": ">=2.0.0", "@radix-ui/react-select": ">=2.0.0", "@radix-ui/react-slot": ">=1.0.0", "@radix-ui/react-switch": ">=1.0.0", "@radix-ui/react-tabs": ">=1.0.0", "@revenuecat/purchases-js": "^1.0.0", "@sudobility/design": "^1.1.72", "@sudobility/di": "^1.5.91", "@sudobility/types": "^1.11.2", "class-variance-authority": ">=0.7.0", "clsx": ">=2.0.0", "firebase": "^12.0.0", "i18next": ">=23.0.0", "react": ">=18.0.0", "react-dom": ">=18.0.0", "react-i18next": ">=14.0.0", "react-router-dom": ">=6.0.0", "recharts": "^3.0.0", "tailwind-merge": ">=2.0.0", "web-vitals": ">=3.0.0" } }, "sha512-IJ9jjdWjOUxISE605QdsaESC0C3r6b1tqbtRqRWIqOqKQbMRQNnxMdQJDa4DtIM9+mQ7YV/avqo5GABj6Q4ESA=="],
+    "@sudobility/components": ["@sudobility/components@5.3.76", "https://npm.pkg.github.com/download/@sudobility/components/5.3.76/8f82e10fa97f92b873a551a101ce47def2176e0d", { "dependencies": { "jsqr": "^1.4.0" }, "optionalDependencies": { "@rollup/rollup-linux-x64-gnu": "4.52.5", "@rollup/rollup-linux-x64-musl": "4.52.5" }, "peerDependencies": { "@heroicons/react": ">=2.0.0", "@radix-ui/react-alert-dialog": ">=1.0.0", "@radix-ui/react-dialog": ">=1.0.0", "@radix-ui/react-label": ">=2.0.0", "@radix-ui/react-select": ">=2.0.0", "@radix-ui/react-slot": ">=1.0.0", "@radix-ui/react-switch": ">=1.0.0", "@radix-ui/react-tabs": ">=1.0.0", "@revenuecat/purchases-js": "^1.0.0", "@sudobility/design": "^1.1.72", "@sudobility/di": "^1.5.91", "@sudobility/types": "^1.11.2", "class-variance-authority": ">=0.7.0", "clsx": ">=2.0.0", "firebase": "^12.0.0", "i18next": ">=23.0.0", "react": ">=18.0.0", "react-dom": ">=18.0.0", "react-i18next": ">=14.0.0", "react-router-dom": ">=6.0.0", "recharts": "^3.0.0", "tailwind-merge": ">=2.0.0", "web-vitals": ">=3.0.0" } }, "sha512-fIPszwE9zqpF08sq1ZdN4spMcH3XtfPyHSLRre8f5fOzPIJLj9mcGGqMmO+0etimMfBxAYXJOrBnrl9P2Nz1lQ=="],
 
     "@sudobility/design": ["@sudobility/design@1.1.72", "https://npm.pkg.github.com/download/@sudobility/design/1.1.72/ee29355781de03bb2e14986a51b75f8aaba4cd1b", { "peerDependencies": { "clsx": ">=2.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-gYRtMzHvVTZqLO3j0R9HLA8+gHnSl2GZ+swbPTL1+itfPIpBt0dr+k5AkaLFYar1pbL5XG+GpPtm/9oguSPj+A=="],
 
@@ -619,7 +619,7 @@
 
     "@sudobility/music_player": ["@sudobility/music_player@0.1.91", "https://npm.pkg.github.com/download/@sudobility/music_player/0.1.91/092527abe320050de5bf0f792175b864108b1201", { "peerDependencies": { "@sudobility/music_types": "^0.13.72", "@sudobility/types": "^1.11.2", "react": ">=18.0.0" } }, "sha512-6YB0xpERA1DIxhZFF+5DAi3MtRospeLHDe6+vis8p6izV7Vjm6Ov6Xq2cUcNHzYQWCdxsAytgwgbafkcqM9tIg=="],
 
-    "@sudobility/music_spatial": ["@sudobility/music_spatial@0.0.43", "https://npm.pkg.github.com/download/@sudobility/music_spatial/0.0.43/4418c781bf79723cdca03a7c00993002d9210bc8", { "peerDependencies": { "@react-three/fiber": "^9.0.0", "@sudobility/music_spatial_core": "^0.0.38", "@sudobility/music_types": "^0.13.72", "@sudobility/types": "^1.11.2", "react": ">=18", "react-dom": ">=18", "three": "^0.160.0" } }, "sha512-JjWzg7+VWQYgCfh9I4JlE7cutGbXHh7TqPF+mp48jLyp1eBOw+NJMfEsXqcry9qi2x3AylugYmPTqtWJr5Bg9w=="],
+    "@sudobility/music_spatial": ["@sudobility/music_spatial@0.0.44", "https://npm.pkg.github.com/download/@sudobility/music_spatial/0.0.44/6b2c6a652929832be3a665f1cfd60b3436694573", { "peerDependencies": { "@react-three/fiber": "^9.0.0", "@sudobility/music_spatial_core": "^0.0.38", "@sudobility/music_types": "^0.13.72", "@sudobility/types": "^1.11.2", "react": ">=18", "react-dom": ">=18", "three": "^0.160.0" } }, "sha512-YWyG0eOAS1VE4PS8IOcFjOrCJC47cRR/f01fB+f+7/3hOWEDuybJYf8pijMcvy0ym6epGP0lioXjQo5ufvl2/Q=="],
 
     "@sudobility/music_spatial_core": ["@sudobility/music_spatial_core@0.0.38", "https://npm.pkg.github.com/download/@sudobility/music_spatial_core/0.0.38/aee32e3b4da73941996e89d64e7fae7f1339a024", { "peerDependencies": { "@sudobility/music_types": "^0.13.72", "@sudobility/types": "^1.11.2", "react": ">=18", "three": "^0.160.0" } }, "sha512-tWlVNxZ2FmjOq5oaen3VkCbIfduEJj2hrQmUNJKFaN88n4EEELPEPmPBSTf0KGhyrYpbaRgMUORfvXo/9wpHhA=="],
 
