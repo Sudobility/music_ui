@@ -34,14 +34,13 @@ export function SpatialSection({ store, bus }: { store: EditorStoreApi; bus?: Pl
       score={score}
       soundingTrackIds={soundingTrackIds}
       locked={locked}
+      // Every listener move — a drag, a keyboard nudge, or an auto-mode
+      // ("Wander") step — commits to the one source of truth,
+      // `score.unplugged.listener`, which the synth mixes from and the stage
+      // camera reads. One location, written here and read by both.
       onMoveListener={(patch) => store.getState().setUnpluggedListener(patch)}
       onMoveTrack={(trackId, point) => store.getState().setUnpluggedTrackPosition(trackId, point)}
       onResetArrangement={() => store.getState().resetUnpluggedArrangement()}
-      // Auto mode (Wander) walks the listener continuously; routed through the
-      // transient preview rather than `setUnpluggedListener` so the mix is
-      // heard live without writing a random walk into the score or undo. The
-      // playback binding reads `unpluggedListenerPreview` and re-mixes.
-      onPreviewListener={(listener) => store.getState().setUnpluggedListenerPreview(listener)}
       // The active track follows whatever the listener is facing: the
       // inspector, the keyboard and the notation highlight then all show
       // the part being looked at. Turning away from everything keeps the
