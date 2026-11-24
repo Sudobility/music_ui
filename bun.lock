@@ -12,7 +12,7 @@
         "@sudobility/design": "^1.1.72",
         "@sudobility/music_client": "^0.4.113",
         "@sudobility/music_codecs": "^0.2.72",
-        "@sudobility/music_drawing": "^0.0.83",
+        "@sudobility/music_drawing": "^0.2.0",
         "@sudobility/music_editing": "^0.0.72",
         "@sudobility/music_io": "^0.9.90",
         "@sudobility/music_lib": "^1.9.95",
@@ -65,7 +65,7 @@
         "@sudobility/design": "^1.1.72",
         "@sudobility/music_client": "^0.4.113",
         "@sudobility/music_codecs": "^0.2.72",
-        "@sudobility/music_drawing": "^0.0.83",
+        "@sudobility/music_drawing": "^0.2.0",
         "@sudobility/music_editing": "^0.0.72",
         "@sudobility/music_io": "^0.9.90",
         "@sudobility/music_lib": "^1.9.95",
@@ -609,7 +609,7 @@
 
     "@sudobility/music_codecs": ["@sudobility/music_codecs@0.2.72", "https://npm.pkg.github.com/download/@sudobility/music_codecs/0.2.72/09530175aa3d3ead288df283374ec826df56dd19", { "peerDependencies": { "@sudobility/music_types": "^0.13.72" } }, "sha512-abMBko9kazH81e4hDiPFHc+yrVZ2sYLoWhs1E9d7KjKamZ5lxang4eZVedHJPM6IjJxcxLVE4iKhHBdrSIgXhg=="],
 
-    "@sudobility/music_drawing": ["@sudobility/music_drawing@0.0.83", "https://npm.pkg.github.com/download/@sudobility/music_drawing/0.0.83/6caf45782b0440f192267d97c7534b6837e255e7", { "peerDependencies": { "@sudobility/music_types": "^0.13.72", "@sudobility/printing_core": "^0.1.1", "vexflow": "^4.2.5" } }, "sha512-VII6ATXuFwFmFUyMibkEnDDjij7cgyvGDL8C9C9xmjhcIZ3NYuSZTMIsXvDFX4uqCjyX5uU8Cv7fAgVDXifQRg=="],
+    "@sudobility/music_drawing": ["@sudobility/music_drawing@0.2.0", "https://npm.pkg.github.com/download/@sudobility/music_drawing/0.2.0/2723ef15cc61ce793ac531c529664cda3c067499", { "peerDependencies": { "@sudobility/music_types": "^0.13.72", "@sudobility/printing_core": "^0.1.1", "vexflow": "^4.2.5" } }, "sha512-c0/alknuZwm5q1xiAkg/CcFONw77kUdT1hPlvdqo/EfNtX/rqoWZT42VImWuF181O0S0yg6qfe96ojI1n2Ev+g=="],
 
     "@sudobility/music_editing": ["@sudobility/music_editing@0.0.72", "https://npm.pkg.github.com/download/@sudobility/music_editing/0.0.72/e8c06d4d757eb0efefd6148b4e381e64d2d65417", { "peerDependencies": { "@sudobility/music_types": "^0.13.72", "@sudobility/types": "^1.11.2", "immer": "^11.1.18", "react": ">=18", "zustand": ">=5" } }, "sha512-/rF4rggh1rlwschNBTzHClmSitWt7FNPq6nujtKEiZrfNnXvYvpaax9R+51eZ3BKeT6n4yny+ZRFv8cZCLINpA=="],
 
