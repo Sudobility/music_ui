@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/music_ui",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Shared functional UI for ScoreSmith's web app (editor shell, toolbar, transport, inspector, score view, keyboard, spatial, print) — routing and content pages stay in the app",
   "type": "module",
   "sideEffects": [
@@ -50,7 +50,7 @@
   "license": "BUSL-1.1",
   "peerDependencies": {
     "@heroicons/react": ">=2",
-    "@sudobility/components": "^5.3.76",
+    "@sudobility/components": "^5.3.78",
     "@sudobility/design": "^1.1.72",
     "@sudobility/music_client": "^0.4.113",
     "@sudobility/music_codecs": "^0.2.72",
@@ -79,7 +79,7 @@
     "@eslint/js": "~10.0.1",
     "@heroicons/react": "~2.2.0",
     "@react-three/fiber": "~9.8.2",
-    "@sudobility/components": "^5.3.76",
+    "@sudobility/components": "^5.3.78",
     "@sudobility/design": "^1.1.72",
     "@sudobility/music_client": "^0.4.113",
     "@sudobility/music_codecs": "^0.2.72",
